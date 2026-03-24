@@ -1,13 +1,11 @@
 fn main() {
     let doomgeneric_dir = "third_party/doomgeneric/doomgeneric";
-
-    // Probe for SDL2 + SDL2_mixer to enable in-engine sound and music.
-    // If the libraries are not installed, the game builds and runs silently.
     let sdl2 = pkg_config::Config::new()
         .atleast_version("2.0.0")
         .probe("sdl2");
     let sdl2_mixer = pkg_config::Config::new().probe("SDL2_mixer");
     let has_sound = sdl2.is_ok() && sdl2_mixer.is_ok();
+
     if !has_sound {
         eprintln!(
             "cargo:warning=SDL2/SDL2_mixer not found — building without audio (install libsdl2-dev libsdl2-mixer-dev to enable)"
@@ -98,6 +96,7 @@ fn main() {
     ];
 
     let mut doom_build = cc::Build::new();
+
     doom_build
         .include(doomgeneric_dir)
         .flag_if_supported("-std=c99")
@@ -108,6 +107,7 @@ fn main() {
         .define("DOOMGENERIC_RESX", "320")
         .define("DOOMGENERIC_RESY", "200");
 
+
     if has_sound {
         let sdl2_lib = sdl2.as_ref().unwrap();
         let sdl2_mixer_lib = sdl2_mixer.as_ref().unwrap();
@@ -117,11 +117,11 @@ fn main() {
         for path in &sdl2_lib.include_paths {
             doom_build.include(path);
         }
+
         for path in &sdl2_mixer_lib.include_paths {
             doom_build.include(path);
         }
 
-        // SDL audio modules: SFX (PCM from WAD) + music (MUS→MIDI→SDL_mixer)
         for source in &["i_sdlsound.c", "i_sdlmusic.c", "mus2mid.c", "gusconf.c"] {
             doom_build.file(format!("{doomgeneric_dir}/{source}"));
         }
@@ -130,6 +130,7 @@ fn main() {
     for source in &doom_sources {
         doom_build.file(format!("{doomgeneric_dir}/{source}"));
     }
+
     doom_build.compile("doomgeneric_core");
 
     #[cfg(target_family = "unix")]
