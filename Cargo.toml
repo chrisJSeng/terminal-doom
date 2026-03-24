@@ -1,0 +1,13 @@
+[package]
+name = "doom-terminal"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+cc = "1"
+pkg-config = "0.3"
+
+[dependencies]
+crossterm = "0.29"
+image = "0.25.10"
+leafwing-input-manager = "0.20.0"
