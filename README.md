@@ -1,11 +1,13 @@
-# doom-terminal
+<div align="center">
+<pre>
 
-Doom running in the terminal. No window, no GPU — just ANSI escape sequences and Unicode characters on stdout.
-
-```
-▓▓▒▒░░                  ░░▒▒▓▓
 ▓▓▒░  [DOOM — TERMINAL]  ░▒▓▓
-```
+
+Doom running in the terminal. No window, no GPU, just ANSI escape sequences and Unicode characters on stdout.
+
+[![Download latest release](https://img.shields.io/badge/Download-Latest%20Release-2ea44f?style=for-the-badge)](https://github.com/chrisJSeng/terminal-doom/releases/latest)
+</pre>
+</div>
 
 ---
 
