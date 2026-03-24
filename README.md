@@ -43,9 +43,11 @@ Without SDL2, the game compiles and runs fine — just without audio. The build 
 
 ### Standalone (pre-built binary)
 
-No Rust or compiler needed. Download the binary, then run:
+For `v0.1.0`, download the release artifact `terminal-doom-v0.1.0-linux-x86_64.tar.gz`, extract it, and run:
 
 ```bash
+tar -xzf terminal-doom-v0.1.0-linux-x86_64.tar.gz
+cd terminal-doom-v0.1.0-linux-x86_64
 ./doom-terminal
 ```
 
