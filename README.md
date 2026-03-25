@@ -1,7 +1,7 @@
 <div align="center">
 <pre>
 
-▓▓▒░  [DOOM — TERMINAL]  ░▒▓▓
+▓▓▒░  [ TERMINAL - DOOM ]  ░▒▓▓
 
 Doom running in the terminal. No window, no GPU, just ANSI escape sequences and Unicode characters on stdout.
 
