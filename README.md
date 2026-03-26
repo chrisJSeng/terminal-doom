@@ -19,6 +19,16 @@ The result is Doom running in any terminal with 24-bit True Color support.
 
 ---
 
+## Screenshots
+
+<p align="center">
+	<img src="docs/images/doom1.png" alt="Doom screenshot 1" width="31%" />
+	<img src="docs/images/doom2.png" alt="Doom screenshot 2" width="31%" />
+	<img src="docs/images/doom3.png" alt="Doom screenshot 3" width="31%" />
+</p>
+
+---
+
 ## Requirements
 
 **OS:** Linux (tested on Ubuntu 22.04+).
